@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2024-09-05 21:54:44.869935",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-09-05 21:54:44.869935",
+ "modified_by": "Administrator",
+ "module": "POS AR",
+ "name": "pos",
+ "owner": "Administrator",
+ "page_name": "pos",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "POS"
+}
