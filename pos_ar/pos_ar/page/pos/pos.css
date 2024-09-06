@@ -4,6 +4,7 @@
 	flex-direction : row ;
 }
 
+
 .columnBox {
 	display        : flex ;
 	flex-direction : column ;
@@ -39,7 +40,7 @@ input:focus{
 	width         : 70%   ;
 	padding       : 10px  ;
 
-	order      : 1 ;
+	order         : 1 ;
 
 }
 
@@ -66,10 +67,18 @@ input:focus{
 
 
 
+#LeftSection #SelectorBox .header{
+	padding        : 8px 16px  ;
+	justify-content: space-between;
+}
 
-
-
-
+#LeftSection #SelectorBox .header #ItemInput{
+	margin : 0px 16px 0px 0px;
+	width  : 350px;
+}
+#LeftSection #SelectorBox .header #ItemGroupInput{
+	width  : 150px;
+}
 
 
 
@@ -92,7 +101,7 @@ input:focus{
 }
 
 #RightSection #CustomerBox .CartTitle{
-
+	padding : 0px 0px 0px 16px  ;
 }
 
 #RightSection #CustomerBox input{
@@ -130,7 +139,7 @@ input:focus{
 
 
 .CartTitle{
-	padding : 8px 0px 8px 16px;
+	padding : 8px 0px 8px;
 	color   : #404040 ;
 
 
