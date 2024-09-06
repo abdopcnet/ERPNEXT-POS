@@ -1,5 +1,85 @@
 #MainContainer{
-	height : 100% ;
+	height : 80vh ;
 	width  : 100% ;
-	background : #f0f0f0 ;
+
+	display : flex ;
+	flex-direction: row;
+}
+
+
+#LeftSection{
+
+	box-sizing: border-box;
+
+	height        : 100%    ;
+	padding       : 10px  ;
+
+	flex-grow  : 3 ;
+	order      : 1 ;
+
+	display    : flex ;
+
+
+}
+
+
+#RightSection{
+	height      : 100% ;
+	padding     : 10px;
+
+	flex-grow  : 2 ;
+	order      : 2 ;
+
+	display    : flex ;
+	flex-direction : column ;
+	
+}
+
+
+
+
+
+
+
+
+
+
+#LeftSection #SelectorBox{
+	width  : 100% ; 
+	height : 100% ;
+
+	border        : 3px solid #c0c0c0 ;
+	border-radius : 16px;
+}
+
+#RightSection #CustomerBox{
+	width  : 100%  ; 
+	height : 100px ;
+	margin-bottom : 5px   ;
+
+	border        : 3px solid #c0c0c0 ;
+	border-radius : 16px;
+	
+}
+
+#RightSection #CartBox{
+	width  : 100% ; 
+	margin-top : 5px   ;
+
+	border        : 3px solid #c0c0c0 ;
+	border-radius : 16px;
+	
+	flex-grow     : 1;	
+}
+
+
+
+
+
+
+
+
+.CartTitle{
+	padding : 8px 0px 0px 16px;
+	color   : #404040 ;
 }

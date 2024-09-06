@@ -1,5 +1,24 @@
+
+<link rel="stylesheet" type="text/css" href="./pos.css">
+
 <div id="MainContainer">
-    <div id="CustomerSection">   </div>
-    <div id="CartSection">   </div>
-    <div id="MainSection">   </div>
+    <div id="LeftSection">
+        <div id="SelectorBox">
+            <h3 class="CartTitle">Items</h3>
+	</div>
+    </div>
+    <div id="RightSection">
+        <div id="CustomerBox"> 
+            <h3 class="CartTitle">Customer</h3>
+            <input list="CustomerList"  id="CustomerInput" name="Customer" placeHolder="Enter the customer">
+            <datalist id="CustomerList">
+                <option value="rayan">
+                <option value="nadji">
+                <option value="said">
+            </datalist>
+        </div>
+        <div id="CartBox">
+            <h3 class="CartTitle">Cart</h3> 
+        </div>
+    </div>
 </div>
