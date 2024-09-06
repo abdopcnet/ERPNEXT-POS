@@ -25,8 +25,9 @@ async function main(){
 	console.log("itemGroupList : " , itemGroupList )
 	console.log("itemList : "      , itemList )
 
-	setCustomersInList(customersList);
-	setItemGroupsInList(itemGroupList);
+	setCustomersInList();
+	setItemGroupsInList();
+	setItemInFlow();
 }
 
 
@@ -40,12 +41,12 @@ async function main(){
 
 /******************************  update the UI ***********************************/
 
-function setCustomersInList(customers){
+function setCustomersInList(){
 
 	const customerList_html = document.getElementById("CustomerList");
 	customerList_html.innerHTML = "" ;
 
-	customers.forEach(customer =>{
+	customersList.forEach(customer =>{
 		const option = document.createElement("option");
 		option.value = customer.name;
 		option.textContent = customer.customer_name;
@@ -53,14 +54,12 @@ function setCustomersInList(customers){
 	})
 }
 
-function setItemGroupsInList(group_items){
+function setItemGroupsInList(){
 
 	const groupItemList_html = document.getElementById("ItemGroupList");
 	groupItemList_html.innerHTML = "" ;
 
-	console.log("in function itemGroupList : " , itemGroupList )
-
-	group_items.forEach(group_item =>{
+	itemGroupList.forEach(group_item =>{
 		console.log("item : " , group_item )
 
 		const option = document.createElement("option");
@@ -73,8 +72,24 @@ function setItemGroupsInList(group_items){
 
 
 
+function setItemInFlow(){
+	const itemsContainer_html = document.getElementById("itemsContainer");
+	itemsContainer_html.innerHTML = '';
 
+	itemList.forEach(item =>{
+		const itemBox = document.createElement("div");
+		itemBox.classList.add("itemBox");
+		itemBox.classList.add("ColumnBox");
+		itemBox.classList.add("C_A_Center");
 
+		const itemName = document.createElement("div");
+		itemName.textContent = item.name ;
+		itemBox.appendChild(itemName);
+
+		itemsContainer_html.appendChild(itemBox);
+	});
+
+}
 
 
 

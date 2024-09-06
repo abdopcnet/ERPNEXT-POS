@@ -10,7 +10,9 @@
 	flex-direction : column ;
 }
 
-
+.C_A_Center{
+	align-items    : center ; 
+}
 
 
 input{
@@ -58,7 +60,7 @@ input:focus{
 /*********************left********************/
 #LeftSection #SelectorBox{
 	width  : 100% ; 
-	height : 100% ;
+	height : 90% ;
 
 	border        : 2px solid #c0c0c0 ;
 	border-radius : 16px;
@@ -66,33 +68,52 @@ input:focus{
 }
 
 
-
+/*header*/
 #LeftSection #SelectorBox .header{
-	padding        : 8px 16px  ;
-	justify-content: space-between;
+	height         : 55px          ;
+	padding        : 8px 16px      ;
+	justify-content: space-between ;
 }
 
 #LeftSection #SelectorBox .header #ItemInput{
 	margin : 0px 16px 0px 0px;
 	width  : 350px;
 }
+
 #LeftSection #SelectorBox .header #ItemGroupInput{
 	width  : 150px;
 }
 
+/*item container*/
+#LeftSection #SelectorBox #itemsContainer {
+	background : #a5b890 ;
+	height     : calc(100% - 55px)    ;
+	padding    : 16px ;
+	border-radius : 0px 0px 16px 16px ; 
+}
 
 
+#LeftSection #SelectorBox #itemsContainer .itemBox {
+	height     : 180px ;
+	width      : 150px ;
+	padding    : 8px   ;
+	border     : 3px solid #a0a0a0 ;
+	border-radius : 12px ;
+	background : #FFFFFF ;
 
+}
 
-
+#LeftSection #SelectorBox #itemsContainer .itemBox .itemTitle{
+	width : auto;
+}
 
 
 /************* right *****************/
 #RightSection #CustomerBox{
-
+	height : 55px  ;
 	width  : 100%  ; 
 	margin-bottom   : 5px    ;
-	padding : 14px 0px ;
+	padding : 8px 0px ;
 
 	border          : 2px solid #c0c0c0 ;
 	border-radius   : 16px   ;
