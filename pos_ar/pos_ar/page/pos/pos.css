@@ -1,60 +1,85 @@
+/****************       generals       *****************/
+.rowBox {
+	display        : flex ;
+	flex-direction : row ;
+}
+
+.columnBox {
+	display        : flex ;
+	flex-direction : column ;
+}
+
+
+
+
+input{
+	padding       : 8px 12px ;
+	border        : none     ;
+	background    : #eaeaea  ;
+	border-radius : 12px     ;
+
+}
+input:focus{
+	border  : none ;
+	outline : none ;
+}
+
+/***********************************************************/
+
+
 #MainContainer{
 	height : 80vh ;
 	width  : 100% ;
-
-	display : flex ;
-	flex-direction: row;
 }
 
 
 #LeftSection{
 
-	box-sizing: border-box;
-
-	height        : 100%    ;
+	height        : 100%  ;
+	width         : 70%   ;
 	padding       : 10px  ;
 
-	flex-grow  : 3 ;
 	order      : 1 ;
-
-	display    : flex ;
-
 
 }
 
 
 #RightSection{
 	height      : 100% ;
+	width       : 30%  ;
 	padding     : 10px;
 
-	flex-grow  : 2 ;
 	order      : 2 ;
-
-	display    : flex ;
-	flex-direction : column ;
-	
 }
 
 
-
-
-
-
-
-
-
-
+/******************************************************************/
+/*********************left********************/
 #LeftSection #SelectorBox{
 	width  : 100% ; 
 	height : 100% ;
 
 	border        : 2px solid #c0c0c0 ;
 	border-radius : 16px;
+
 }
 
-#RightSection #CustomerBox{
 
-	box-sizing: border-box;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************* right *****************/
+#RightSection #CustomerBox{
 
 	width  : 100%  ; 
 	margin-bottom   : 5px    ;
@@ -63,32 +88,20 @@
 	border          : 2px solid #c0c0c0 ;
 	border-radius   : 16px   ;
 
-	display         : flex   ;
-	flex-direction  : row    ;
-  	justify-content : center ;	
-	align-items     : center ;
 	
 }
 
 #RightSection #CustomerBox .CartTitle{
 
-	padding-bottom : 8px  ;
-
-	display: flex;
-	align-items: center;  /* Vertically centers the h3 */
-	justify-content: center;  /* Horizontally centers the h3 */
-	margin: 0; /* Reset any default margin from h3 */
 }
 
 #RightSection #CustomerBox input{
 
 	box-sizing: border-box;
+	margin-left : 10px ;
 
 	border        : none     ;
 	background    : #eaeaea  ;
-	width         : calc(100% - 80px);
-	margin-left   : 40px     ;
-	margin-right  : 40px     ;
 	padding       : 8px 12px ;
 	border-radius : 12px     ;
 }
@@ -117,6 +130,13 @@
 
 
 .CartTitle{
-	padding : 8px 0px 0px 16px;
+	padding : 8px 0px 8px 16px;
 	color   : #404040 ;
+
+
+	display: flex;
+	align-items: center;  /* Vertically centers the h3 */
+	justify-content: center;  /* Horizontally centers the h3 */
+	margin: 0; /* Reset any default margin from h3 */
+
 }

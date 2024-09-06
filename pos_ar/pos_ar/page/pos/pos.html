@@ -1,20 +1,27 @@
 
 <link rel="stylesheet" type="text/css" href="./pos.css">
 
-<div id="MainContainer">
-    <div id="LeftSection">
+<div id="MainContainer" class="rowBox">
+    <div id="LeftSection" class="columnBox">
         <div id="SelectorBox">
-            <h3 class="CartTitle">Items</h3>
+            <div class="row header">
+                <h3 class="CartTitle">Items</h3>
+
+		<div id="inputsBox" class="rowBox">
+                    <input type="text" autocomplete="off"  maxlength="140" placeholder="Search by item code, serial number or barcode" id="ItemInput" name="item" placeHolder="Enter the customer">
+                    <input list="ItemGroupList"  id="ItemGroupInput" name="ItemGroup" placeHolder="Item Group">
+                    <datalist id="ItemGroupList">
+                        <option>Item Group 1</option>
+		    </datalist>
+                </div>
+            </div>
 	</div>
     </div>
-    <div id="RightSection">
-        <div id="CustomerBox"> 
+    <div id="RightSection" class="columnBox">
+        <div id="CustomerBox" class="rowBox"> 
             <h3  class="CartTitle">Customer</h3>
             <input list="CustomerList"  id="CustomerInput" name="Customer" placeHolder="Enter the customer">
             <datalist id="CustomerList">
-                <option value="rayan">
-                <option value="nadji">
-                <option value="said">
             </datalist>
         </div>
         <div id="CartBox">

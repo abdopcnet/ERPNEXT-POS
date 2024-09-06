@@ -17,6 +17,8 @@ async function main(){
 
 	customersList = await fetchCustomers()
         setCustomersInList(customersList);
+        setCustomersInList(customersList);
+        setCustomersInList(customersList);
 
 }
 
@@ -38,5 +40,14 @@ async function fetchCustomers() {
 
 
 function setCustomersInList(customers){
-	console.log("Customers list" , customers);
+
+	const customerList_html = document.getElementById("CustomerList");
+	customerList_html.innerHTML = "" ;
+
+	customers.forEach(customer =>{
+		const option = document.createElement("option");
+		option.value = customer.name;
+		option.textContent = customer.customer_name;
+		customerList_html.appendChild(option);
+	})
 }
