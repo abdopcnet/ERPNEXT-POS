@@ -13,14 +13,17 @@ frappe.pages['pos'].on_page_load = function(wrapper) {
 
 let customersList = []
 let itemGroupList = []
+let itemList = []
 
 async function main(){
 
 	customersList = await fetchCustomers()
 	itemGroupList = await fetchItemGroups()
+	itemList      = await fetchItems()
 
 	console.log("customersList : " , customersList )
 	console.log("itemGroupList : " , itemGroupList )
+	console.log("itemList : "      , itemList )
 
 	setCustomersInList(customersList);
 	setItemGroupsInList(itemGroupList);
