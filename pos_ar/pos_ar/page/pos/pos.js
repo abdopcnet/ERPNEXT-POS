@@ -83,9 +83,23 @@ function setItemInFlow(){
 		itemBox.classList.add("C_A_Center");
 
 
-		const itemImage = document.createElement("img");
-		itemImage.classList.add("itemImage");
-		itemBox.appendChild(itemImage);
+		if(item.image){
+			const itemImage = document.createElement("img");
+			itemImage.classList.add("itemImage");
+			itemImage.src = item.image
+			itemBox.appendChild(itemImage);
+		}
+		else{
+			const itemImageHolder = document.createElement("div");
+			itemImageHolder.classList.add("itemImage");
+			itemImageHolder.classList.add("rowBox")
+			itemImageHolder.classList.add("centerItem");
+			const firstLatter = document.createElement("h1");
+			firstLatter.textContent = item.name[0];
+			firstLatter.style.color = "#707070";
+			itemImageHolder.appendChild(firstLatter);
+			itemBox.appendChild(itemImageHolder);
+		}
 
 		const itemName = document.createElement("h5");
 		itemName.textContent = item.name ;
