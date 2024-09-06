@@ -74,16 +74,22 @@ function setItemGroupsInList(){
 
 function setItemInFlow(){
 	const itemsContainer_html = document.getElementById("itemsContainer");
-	itemsContainer_html.innerHTML = '';
+	itemsContainer_html.innerHTML = "";
 
 	itemList.forEach(item =>{
 		const itemBox = document.createElement("div");
 		itemBox.classList.add("itemBox");
-		itemBox.classList.add("ColumnBox");
+		itemBox.classList.add("columnBox");
 		itemBox.classList.add("C_A_Center");
 
-		const itemName = document.createElement("div");
+
+		const itemImage = document.createElement("img");
+		itemImage.classList.add("itemImage");
+		itemBox.appendChild(itemImage);
+
+		const itemName = document.createElement("h5");
 		itemName.textContent = item.name ;
+		itemName.classList.add("itemTitle");
 		itemBox.appendChild(itemName);
 
 		itemsContainer_html.appendChild(itemBox);
@@ -128,7 +134,7 @@ async function fetchItemGroups() {
 async function fetchItems() {
     try {
 	return await frappe.db.get_list('Item', {
-			fields: ['name', 'item_name' ],
+			fields: ['name', 'item_name' , 'image' ],
     			filters: {}
 		})
 

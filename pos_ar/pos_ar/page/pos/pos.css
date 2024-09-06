@@ -1,12 +1,14 @@
 /****************       generals       *****************/
 .rowBox {
-	display        : flex ;
-	flex-direction : row ;
+	display        : flex   ;
+	flex-direction : row    ;
 }
 
-
+.row_wrap{
+	flex-wrap      : wrap   ;
+}
 .columnBox {
-	display        : flex ;
+	display        : flex   ; 
 	flex-direction : column ;
 }
 
@@ -16,7 +18,7 @@
 
 
 input{
-	padding       : 8px 12px ;
+	padding       : 0px 12px ;
 	border        : none     ;
 	background    : #eaeaea  ;
 	border-radius : 12px     ;
@@ -60,7 +62,6 @@ input:focus{
 /*********************left********************/
 #LeftSection #SelectorBox{
 	width  : 100% ; 
-	height : 90% ;
 
 	border        : 2px solid #c0c0c0 ;
 	border-radius : 16px;
@@ -87,7 +88,6 @@ input:focus{
 /*item container*/
 #LeftSection #SelectorBox #itemsContainer {
 	background : #a5b890 ;
-	height     : calc(100% - 55px)    ;
 	padding    : 16px ;
 	border-radius : 0px 0px 16px 16px ; 
 }
@@ -103,8 +103,19 @@ input:focus{
 
 }
 
-#LeftSection #SelectorBox #itemsContainer .itemBox .itemTitle{
-	width : auto;
+#LeftSection #SelectorBox #itemsContainer .itemBox:hover {
+
+	background : #F0F0F0 ;
+}
+
+#LeftSection #SelectorBox #itemsContainer .itemBox .itemImage{
+	width  : calc(100% - 10px);
+	height : 75%  ;
+	margin : 10px 5px ;
+	background : #e0e0e0 ;
+	boder         : none ;
+	outline       : none ; 
+	border-radius : 12px ;
 }
 
 
@@ -122,19 +133,9 @@ input:focus{
 }
 
 #RightSection #CustomerBox .CartTitle{
-	padding : 0px 0px 0px 16px  ;
+	padding : 0px 16px 0px 16px  ;
 }
 
-#RightSection #CustomerBox input{
-
-	box-sizing: border-box;
-	margin-left : 10px ;
-
-	border        : none     ;
-	background    : #eaeaea  ;
-	padding       : 8px 12px ;
-	border-radius : 12px     ;
-}
 
 
 #RightSection #CustomerBox input:focus{
