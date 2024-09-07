@@ -155,7 +155,7 @@ input:focus{
 	height : 75%  ;
 	margin : 10px 5px ;
 	background : #e0e0e0 ;
-	boder         : none ;
+	border        : none ;
 	outline       : none ; 
 	border-radius : 12px ;
 }

@@ -14,6 +14,8 @@ frappe.pages['pos'].on_page_load = function(wrapper) {
 let customersList    = []
 let itemGroupList    = []
 let itemList         = []
+let itemPrices       = []
+let priceLists       = []
 let selectedItemMap = new Map();
 
 async function main(){
@@ -21,10 +23,14 @@ async function main(){
 	customersList = await fetchCustomers()
 	itemGroupList = await fetchItemGroups()
 	itemList      = await fetchItems()
+	itemPrices    = await fetchItemPrice()
+	priceLists    = await fetchPriceList()
 
 	console.log("customersList : " , customersList )
 	console.log("itemGroupList : " , itemGroupList )
 	console.log("itemList : "      , itemList )
+	console.log("itemPrices : "    , itemPrices )
+	console.log("priceLists : "    , priceLists )
 
 
 	setCustomersInList();
@@ -161,11 +167,11 @@ function setSelectedItem(){
 		leftGroup.appendChild(itemName);
 
 		//quantity
-		itemQuantity.textContent = 2
+		itemQuantity.textContent = item.quantity
 		itemQuantity.classList.add("itemQuantity");
 		rightGroup.appendChild(itemQuantity);
 		//price
-		itemPrice.textContent = 3500
+		itemPrice.textContent = getItemPrice(item.name) + " DA"
 		itemPrice.classList.add("itemPrice");
 		rightGroup.appendChild(itemPrice);
 
@@ -211,16 +217,25 @@ function getItemByItemGroup(item_group){
 	return filtredItemList;
 }
 
+function getItemPrice(itemId){
+
+	const price = itemPrices.find(itemPrice => itemPrice.item_code == itemId)
+
+	return price ? price.price_list_rate  : 0
+}
+
 
 function itemClick(item){
 	const cart = document.getElementById("CartBox");
 
 	if(!selectedItemMap.has(item.name)){
-
+		item.quantity = 1 ;
 		selectedItemMap.set( item.name  , item);
 	}
 	else{
-		
+		const existingItem = selectedItemMap.get(item.name);
+		existingItem.quantity += 1 ;
+		selectedItemMap.set( item.name  , existingItem);
 	}
 
 }
@@ -259,6 +274,33 @@ async function fetchItems() {
     try {
 	return await frappe.db.get_list('Item', {
 			fields: ['name', 'item_name' , 'image' , 'item_group' ],
+    			filters: {}
+		})
+
+    } catch (error) {
+        console.error('Error fetching Item Group :', error);
+	return []
+    }
+}
+
+async function fetchItemPrice() {
+    try {
+	return await frappe.db.get_list('Item Price', {
+			fields: ['name', 'item_code' , 'item_name' , 'price_list', 'price_list_rate' ],
+    			filters: { price_list : "Standard Selling"}
+		})
+
+    } catch (error) {
+        console.error('Error fetching Item Group :', error);
+	return []
+    }
+}
+
+
+async function fetchPriceList() {
+    try {
+	return await frappe.db.get_list('Price List', {
+			fields: ['name', 'price_list_name' , 'currency' ],
     			filters: {}
 		})
 
