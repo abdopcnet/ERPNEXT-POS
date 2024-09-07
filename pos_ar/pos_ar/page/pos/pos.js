@@ -11,9 +11,10 @@ frappe.pages['pos'].on_page_load = function(wrapper) {
 }
 
 
-let customersList = []
-let itemGroupList = []
-let itemList = []
+let customersList    = []
+let itemGroupList    = []
+let itemList         = []
+let selectedItemMap = new Map();
 
 async function main(){
 
@@ -88,8 +89,8 @@ function setItemInFlow(filtered_item_list){
 		itemBox.classList.add("C_A_Center");
 
 		itemBox.addEventListener('click' , function(event){
-			console.log("item clicked : " , event );
-			setItemInCart(item);
+			itemClick(item);
+			setSelectedItem();
 		});
 
 
@@ -122,15 +123,23 @@ function setItemInFlow(filtered_item_list){
 
 }
 
+function setSelectedItem(){
+
+	console.log("Map" , selectedItemMap)
+
+	const cartBox = document.getElementById("CartBox");
+	cartBox.innerHTML = "";
+
+	selectedItemMap.forEach((item,itemId) =>{
+		console.log("item : " , item)
+
+		const itemElement = document.createElement("div");
+		itemElement.textContent = item.name;
+		itemElement.classList.add("rowBox" , "ItemElement");
+		cartBox.appendChild(itemElement);
+	})
 
 
-function setItemInCart(item){
-	const cart = document.getElementById("CartBox");
-	const itemElement = document.createElement("div");
-	itemElement.textContent = item.name;
-	itemElement.classList.add("rowBox");
-	itemElement.classList.add("ItemElement");
-	cart.appendChild(itemElement);
 }
 
 
@@ -138,7 +147,8 @@ function setItemInCart(item){
 
 
 
-/*************************** mapper  *************************************/
+
+/******************************* Tools  *************************************/
 
 
 function getItemByItemGroup(item_group){
@@ -157,6 +167,18 @@ function getItemByItemGroup(item_group){
 }
 
 
+function itemClick(item){
+	const cart = document.getElementById("CartBox");
+
+	if(!selectedItemMap.has(item.name)){
+
+		selectedItemMap.set( item.name  , item);
+	}
+	else{
+		
+	}
+
+}
 
 
 
