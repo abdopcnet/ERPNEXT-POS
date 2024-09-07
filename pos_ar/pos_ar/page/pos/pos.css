@@ -131,6 +131,9 @@ input:focus{
 #LeftSection #SelectorBox #itemsContainer {
 	padding    : 16px ;
 	border-radius : 0px 0px 16px 16px ; 
+
+	flex          : 1      ; 
+	overflow-y    : scroll ;
 }
 
 
