@@ -27,13 +27,22 @@
             </datalist>
         </div>
         <div id="CartBox" class="columnBox">
-            <h3 class="CartTitle">Cart</h3> 
+            <h3 class="CartTitle">Item Cart</h3>
+            <div id="cartHeader" class="rowBox row_sbtw">
+                <div><h5>Item</h5></div>
+                <div class="rowBox">
+                     <div id="quantityTitle"><h5>Quantity</h5></div>
+                     <div id="amountTitle"><h5>Amount</h5></div>
+                </div>
+            </div> 
             <div id="selectedItemsContainer" class="columnBox"></div>
             <div id="cartFooter" class="columnBox">
-                <div id="discount">discount</div>
-		<div id="Total Quantity">total quantity</div>
-                <div id="Net Total">net total</div>
-		<div id="Grand Total">grand total</div>
+		<div id="cartDetails">
+                        <div id="discount">discount</div>
+			<div id="Total Quantity">total quantity</div>
+        	        <div id="Net Total">net total</div>
+			<div id="Grand Total">grand total</div>
+                </div>
                 <button type="button" id="checkoutBtn"> Checkout </button>
             </div>
         </div>

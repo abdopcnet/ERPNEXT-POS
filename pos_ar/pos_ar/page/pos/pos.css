@@ -19,6 +19,9 @@
 	flex-wrap      : wrap   ;
 }
 
+.row_sbtw{
+	justify-content: space-between;
+}
 
 .columnBox {
 	display        : flex   ; 
@@ -181,34 +184,41 @@ input:focus{
 	width  : 100% ; 
 	height : calc(100% - 55px) ;
 	margin-top : 5px    ;
+	padding    : 0px 0px 16px 0px ;
 
 	border        : 2px solid #c0c0c0 ;
 	border-radius : 16px;
-	
+	overFlow      : hidden; 	
+
 	flex-grow     : 1;	
 }
 
+
+/*** items container***/
+
+
+#RightSection #CartBox #cartHeader{
+	width   : calc(100% - 32px)  ;
+	height  : 45px     ;
+	margin  : 4px 16px ;
+}
+
+#RightSection #CartBox #cartHeader #quantityTitle{
+	margin : 0px 16px 0px 0px ;
+}
 
 #RightSection #CartBox #selectedItemsContainer{	
 	flex-grow : 1     ;
 	overflow-y: scroll;
 }
 
-
-
-/* footer */
-#RightSection #CartBox #cartFooter{
-	height : 150px ;
-	min-height : 150px ;
-	width  : 100%  ;
-}
-
+/* element  */
 #RightSection #CartBox .ItemElement{
 	width   : calc(100% - 32px)  ;
 	height  : 75px     ;
 	min-height : 75px  ;
-	margin  : 5px 16px ;
-	padding : 10px     ;
+	margin  : 4px 16px ;
+	padding : 6px      ;
 
 	border : 2px solid #707070 ;
 	border-radius : 12px  ; 
@@ -222,11 +232,24 @@ input:focus{
 
 
 
+/*** footer ***/
+#RightSection #CartBox #cartFooter{
+	height : 150px ;
+	min-height : 150px ;
+	width  : 100%  ;
+}
+
+
+
+#RightSection #CartBox #cartDetails{
+	width  : calc(100% - 32px) ;
+	margin : 8px 16px ;
+}
+
 #checkoutBtn{
 
-	width   : calc(100% - 32px);
-	margin  : 8px 16px ;
-	padding : 4px 10px ;
+	width   : calc(100% - 32px)  ;
+	margin  : 8px 16px 16px 16px ;
 	
 	color   : #FFFFFF  ;
 	font-size: x-large;
