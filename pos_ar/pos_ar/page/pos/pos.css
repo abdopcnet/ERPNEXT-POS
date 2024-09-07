@@ -31,13 +31,27 @@ input{
 	padding       : 0px 12px ;
 	border        : none     ;
 	background    : #eaeaea  ;
-	border-radius : 12px     ;
+	border-radius : 10px     ;
 
 }
 input:focus{
 	border  : none ;
 	outline : none ;
 }
+
+
+.CartTitle{
+	padding : 8px 0px 8px;
+	color   : #404040 ;
+
+
+	display: flex;
+	align-items: center;  /* Vertically centers the h3 */
+	justify-content: center;  /* Horizontally centers the h3 */
+	margin: 0; /* Reset any default margin from h3 */
+
+}
+
 
 /***********************************************************/
 
@@ -142,10 +156,10 @@ input:focus{
 	
 }
 
-#RightSection #CustomerBox .CartTitle{
-	padding : 0px 16px 0px 16px  ;
+#RightSection #CustomerBox #CustomerInput{
+	width   : 100% ;
+	margin  : 0px 16px;
 }
-
 
 
 #RightSection #CustomerBox input:focus{
@@ -164,20 +178,18 @@ input:focus{
 }
 
 
+#RightSection #CartBox .ItemElement{
+	width   : calc(100%-32px)  ;
+	height  : 75px     ;
+	margin  : 5px 16px ;
+	padding : 10px     ;
+
+	border : 2px solid #707070 ;
+	border-radius : 12px  ; 
+}
 
 
-
-
-
-
-.CartTitle{
-	padding : 8px 0px 8px;
-	color   : #404040 ;
-
-
-	display: flex;
-	align-items: center;  /* Vertically centers the h3 */
-	justify-content: center;  /* Horizontally centers the h3 */
-	margin: 0; /* Reset any default margin from h3 */
-
+#RightSection #CartBox .ItemElement:hover{
+	border     : 3px solid #a0a0a0 ;
+	background : #F0F0F0 ;
 }
