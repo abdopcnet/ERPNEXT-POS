@@ -125,17 +125,40 @@ function setItemInFlow(filtered_item_list){
 
 function setSelectedItem(){
 
-	console.log("Map" , selectedItemMap)
 
 	const selectedItemsContainer = document.getElementById("selectedItemsContainer");
 	selectedItemsContainer.innerHTML = "";
 
 	selectedItemMap.forEach((item,itemId) =>{
-		console.log("item : " , item)
-
 		const itemElement = document.createElement("div");
-		itemElement.textContent = item.name;
-		itemElement.classList.add("rowBox" , "ItemElement");
+		const itemName    = document.createElement("h5") ;
+
+		//item
+		itemElement.classList.add("rowBox" , "row_align_center" , "ItemElement");
+
+		//image
+		//check if there is an image or not
+		if(item.image){
+			const itemImage   = document.createElement("img");
+			itemImage.src = item.image ;
+			itemImage.classList.add("selectedItemImage");
+			itemElement.appendChild(itemImage);
+		}else{
+			const itemImageHolder = document.createElement("div");
+			const itemImageLatter = document.createElement("h4");
+
+			itemImageHolder.classList.add("selectedItemImage" , "rowBox" , "centerItem");
+
+			itemImageLatter.textContent = item.name[0]
+			itemImageLatter.style.padding = "10px 0px 0px 0px"
+			itemImageHolder.appendChild(itemImageLatter);
+			itemElement.appendChild(itemImageHolder);
+		}
+
+		//name
+		itemName.textContent = item.name
+
+		itemElement.appendChild(itemName);
 		selectedItemsContainer.appendChild(itemElement);
 	})
 
