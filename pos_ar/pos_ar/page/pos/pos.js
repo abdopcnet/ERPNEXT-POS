@@ -127,8 +127,8 @@ function setSelectedItem(){
 
 	console.log("Map" , selectedItemMap)
 
-	const cartBox = document.getElementById("CartBox");
-	cartBox.innerHTML = "";
+	const selectedItemsContainer = document.getElementById("selectedItemsContainer");
+	selectedItemsContainer.innerHTML = "";
 
 	selectedItemMap.forEach((item,itemId) =>{
 		console.log("item : " , item)
@@ -136,7 +136,7 @@ function setSelectedItem(){
 		const itemElement = document.createElement("div");
 		itemElement.textContent = item.name;
 		itemElement.classList.add("rowBox" , "ItemElement");
-		cartBox.appendChild(itemElement);
+		selectedItemsContainer.appendChild(itemElement);
 	})
 
 
