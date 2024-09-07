@@ -163,7 +163,8 @@ function setSelectedItem(){
 		}
 
 		//name
-		itemName.textContent = item.name
+		itemName.textContent = item.name;
+		itemName.classList.add("selectedItemName");
 		leftGroup.appendChild(itemName);
 
 		//quantity
