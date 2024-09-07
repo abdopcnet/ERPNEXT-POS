@@ -114,7 +114,7 @@ input:focus{
 }
 
 #LeftSection #SelectorBox #itemsContainer .itemBox:hover {
-
+	border     : 3px solid #a0a0a0 ;
 	background : #F0F0F0 ;
 }
 

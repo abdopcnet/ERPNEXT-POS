@@ -25,9 +25,14 @@ async function main(){
 	console.log("itemGroupList : " , itemGroupList )
 	console.log("itemList : "      , itemList )
 
+
 	setCustomersInList();
 	setItemGroupsInList();
-	setItemInFlow();
+
+	document.getElementById("ItemGroupInput").addEventListener('input' , function(event){
+		setItemInFlow(getItemByItemGroup(event.target.value));
+	});
+
 }
 
 
@@ -72,11 +77,11 @@ function setItemGroupsInList(){
 
 
 
-function setItemInFlow(){
+function setItemInFlow(filtered_item_list){
 	const itemsContainer_html = document.getElementById("itemsContainer");
 	itemsContainer_html.innerHTML = "";
 
-	itemList.forEach(item =>{
+	filtered_item_list.forEach(item =>{
 		const itemBox = document.createElement("div");
 		itemBox.classList.add("itemBox");
 		itemBox.classList.add("columnBox");
@@ -117,6 +122,29 @@ function setItemInFlow(){
 
 
 
+
+/*************************** mapper  *************************************/
+
+
+function getItemByItemGroup(item_group){
+
+	let filtredItemList = [];
+
+	console.log("starting getItemByGroup FUN : " , item_group)
+
+	itemList.forEach(item =>{
+		if(item.item_group == item_group){
+			filtredItemList.push(item);
+		}
+	})
+
+	return filtredItemList;
+}
+
+
+
+
+
 /*********************  get data functions ******************************/
 
 async function fetchCustomers() {
@@ -148,7 +176,7 @@ async function fetchItemGroups() {
 async function fetchItems() {
     try {
 	return await frappe.db.get_list('Item', {
-			fields: ['name', 'item_name' , 'image' ],
+			fields: ['name', 'item_name' , 'image' , 'item_group' ],
     			filters: {}
 		})
 
