@@ -130,11 +130,12 @@ function setSelectedItem(){
 	selectedItemsContainer.innerHTML = "";
 
 	selectedItemMap.forEach((item,itemId) =>{
-		const itemElement = document.createElement("div");
-		const itemName    = document.createElement("h5") ;
-
-		//item
-		itemElement.classList.add("rowBox" , "row_align_center" , "ItemElement");
+		const itemElement   = document.createElement("div");
+		const leftGroup     = document.createElement("div");
+		const rightGroup    = document.createElement("div");
+		const itemName      = document.createElement("h5") ;
+		const itemQuantity  = document.createElement("div") ;
+		const itemPrice     = document.createElement("div") ;
 
 		//image
 		//check if there is an image or not
@@ -142,7 +143,7 @@ function setSelectedItem(){
 			const itemImage   = document.createElement("img");
 			itemImage.src = item.image ;
 			itemImage.classList.add("selectedItemImage");
-			itemElement.appendChild(itemImage);
+			leftGroup.appendChild(itemImage);
 		}else{
 			const itemImageHolder = document.createElement("div");
 			const itemImageLatter = document.createElement("h4");
@@ -152,13 +153,34 @@ function setSelectedItem(){
 			itemImageLatter.textContent = item.name[0]
 			itemImageLatter.style.padding = "10px 0px 0px 0px"
 			itemImageHolder.appendChild(itemImageLatter);
-			itemElement.appendChild(itemImageHolder);
+			leftGroup.appendChild(itemImageHolder);
 		}
 
 		//name
 		itemName.textContent = item.name
+		leftGroup.appendChild(itemName);
 
-		itemElement.appendChild(itemName);
+		//quantity
+		itemQuantity.textContent = 2
+		itemQuantity.classList.add("itemQuantity");
+		rightGroup.appendChild(itemQuantity);
+		//price
+		itemPrice.textContent = 3500
+		itemPrice.classList.add("itemPrice");
+		rightGroup.appendChild(itemPrice);
+
+		//leftGroup
+		leftGroup.classList.add("rowBox" , "row_align_center" , "leftGroup")
+		itemElement.appendChild(leftGroup);
+
+		//rightGroup
+		rightGroup.classList.add("rowBox" , "row_align_center" , "rightGroup")
+		itemElement.appendChild(rightGroup);
+
+
+		//item
+		itemElement.classList.add("rowBox" , "row_align_center" , "row_sbtw" , "ItemElement");
+
 		selectedItemsContainer.appendChild(itemElement);
 	})
 
