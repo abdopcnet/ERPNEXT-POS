@@ -179,16 +179,16 @@ function setSelectedItem(){
 		rightGroup.appendChild(itemPrice);
 
 		//leftGroup
-		leftGroup.classList.add("rowBox" , "row_align_center" , "leftGroup")
+		leftGroup.classList.add("rowBox" , "align_center" , "leftGroup")
 		itemElement.appendChild(leftGroup);
 
 		//rightGroup
-		rightGroup.classList.add("rowBox" , "row_align_center" , "rightGroup")
+		rightGroup.classList.add("rowBox" , "align_center" , "rightGroup")
 		itemElement.appendChild(rightGroup);
 
 
 		//item
-		itemElement.classList.add("rowBox" , "row_align_center" , "row_sbtw" , "ItemElement");
+		itemElement.classList.add("rowBox" , "align_center" , "row_sbtw" , "ItemElement");
 		itemElement.addEventListener("click" , function(event){
 			showOrHideItemDetails();
 		})
@@ -268,15 +268,20 @@ function calculateQnatity(){
 }
 
 function showOrHideItemDetails(){
+
 	const selectorBox = document.getElementById("SelectorBox");
 	const itemDetailsCart = document.getElementById("itemDetailsCart");
 
 
-	if(selectorBox.style.visibility == "visible"){
-		selectorBox.style.visibility = "hidden";
+	console.log("display : " , selectorBox.style.display)
+
+	if(selectorBox.style.display != "none"){
+		selectorBox.style.display = "none";
+		itemDetailsCart.style.display = "block";
 	}
 	else{
-		selectorBox.style.visibility = "visible";
+		selectorBox.style.display       = "block";
+		itemDetailsCart.style.display   = "none";
 	}
 }
 

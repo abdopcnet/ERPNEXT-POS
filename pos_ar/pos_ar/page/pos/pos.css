@@ -15,7 +15,7 @@
 	flex-direction : row    ;
 }
 
-.row_align_center{
+.align_center{
 	align-items : center ;
 }
 
@@ -112,11 +112,10 @@ input:focus{
 #LeftSection #SelectorBox{
 	width     : 100% ;
 	height    : 100% ;
-	animation : mymove 3s  ;
+	animation : mymove 1s  ;
 
 	border        : 2px solid #c0c0c0 ;
 	border-radius : 16px;
-
 }
 
 
@@ -170,6 +169,18 @@ input:focus{
 	border        : none ;
 	outline       : none ; 
 	border-radius : 12px ;
+}
+
+
+/* item details cart */
+#LeftSection #itemDetailsCart{
+	width     : 100% ;
+	height    : 100% ;
+	animation : mymove 1s ;
+	display   : none ;
+
+	border        : 2px solid #c0c0c0 ;
+	border-radius : 16px;
 }
 
 
