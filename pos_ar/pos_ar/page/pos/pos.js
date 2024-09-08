@@ -189,6 +189,9 @@ function setSelectedItem(){
 
 		//item
 		itemElement.classList.add("rowBox" , "row_align_center" , "row_sbtw" , "ItemElement");
+		itemElement.addEventListener("click" , function(event){
+			showOrHideItemDetails();
+		})
 
 		selectedItemsContainer.appendChild(itemElement);
 	})
@@ -262,6 +265,19 @@ function calculateQnatity(){
 
 	const totalQuantity_HTML = document.getElementById("totalQuantityValue");
 	totalQuantity_HTML.textContent = quantity;
+}
+
+function showOrHideItemDetails(){
+	const selectorBox = document.getElementById("SelectorBox");
+	const itemDetailsCart = document.getElementById("itemDetailsCart");
+
+
+	if(selectorBox.style.visibility == "visible"){
+		selectorBox.style.visibility = "hidden";
+	}
+	else{
+		selectorBox.style.visibility = "visible";
+	}
 }
 
 

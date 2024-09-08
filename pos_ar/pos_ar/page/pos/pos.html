@@ -27,15 +27,19 @@
             </datalist>
         </div>
         <div id="CartBox" class="columnBox">
-            <div>
+            <div id="CartBoxTopBar" class=" rowBox row_align_center  row_sbtw">
                 <h3 class="CartTitle">Item Cart</h3>
-                <div></div>
+                <div>
+                    <input list="PriceList"  id="PlriceListInput" name="PriceList" placeHolder="Choice a Price list">
+                    <datalist id="PriceList">
+                    </datalist>
+                </div>
             </div>
             <div id="cartHeader" class="rowBox row_sbtw">
                 <div><h5>Item</h5></div>
                 <div class="rowBox">
                      <div id="quantityTitle"><h5>Quantity</h5></div>
-                     <div id="amountTitle"><h5>Amount</h5></div>
+                     <div id="amountTitle">  <h5>Amount  </h5></div>
                 </div>
             </div> 
             <div id="selectedItemsContainer" class="columnBox"></div>
