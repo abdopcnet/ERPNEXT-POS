@@ -36,9 +36,13 @@ async function main(){
 	setCustomersInList();
 	setItemGroupsInList();
 
+
+
+	//set listener
 	document.getElementById("ItemGroupInput").addEventListener('input' , function(event){
 		setItemInFlow(getItemByItemGroup(event.target.value));
 	});
+
 
 }
 
@@ -100,7 +104,6 @@ function setItemInFlow(filtered_item_list){
 			calculateNetTotal();
 			calculateQnatity();
 		});
-
 
 
 		if(item.image){
@@ -190,7 +193,8 @@ function setSelectedItem(){
 		//item
 		itemElement.classList.add("rowBox" , "align_center" , "row_sbtw" , "ItemElement");
 		itemElement.addEventListener("click" , function(event){
-			showOrHideItemDetails();
+			hideSelectorCart();
+			showItemDetails();
 		})
 
 		selectedItemsContainer.appendChild(itemElement);
@@ -201,7 +205,57 @@ function setSelectedItem(){
 
 
 
+/*function showOrHideItemDetails(){
 
+	const selectorBox     = document.getElementById("SelectorBox");
+	const itemDetailsCart = document.getElementById("itemDetailsCart");
+
+	console.log("bfr selectorBox : " , selectorBox.style.display)
+	console.log("bfr itemDetails : " , itemDetailsCart.style.display)
+
+
+	if(selectorBox.style.display != "none"){
+		console.log("in if  : " )
+		hideSelectorCart();
+		showItemDetails();
+	}
+	else{
+		console.log("in if  : " )
+		showSelectorCart();
+		hideItemDetails();
+	}
+
+
+}
+*/
+
+/********************* show and hide  functions   *****************************/
+//item detailscart
+function showItemDetails(){
+	const itemDetailsCart = document.getElementById("itemDetailsCart");
+	itemDetailsCart.style.display = "block";
+
+	document.getElementById("itemDetailsCartXBtn").addEventListener('click', function(event){
+		hideItemDetails();
+		showSelectorCart();
+	})
+}
+
+function hideItemDetails(){
+	const itemDetailsCart = document.getElementById("itemDetailsCart");
+	itemDetailsCart.style.display = "none";
+}
+
+//selectors cart
+function showSelectorCart(){
+	const selectorBox = document.getElementById("SelectorBox");
+	selectorBox.style.display = "block";
+}
+
+function hideSelectorCart(){
+	const selectorBox = document.getElementById("SelectorBox");
+	selectorBox.style.display = "none";
+}
 
 
 
@@ -267,23 +321,6 @@ function calculateQnatity(){
 	totalQuantity_HTML.textContent = quantity;
 }
 
-function showOrHideItemDetails(){
-
-	const selectorBox = document.getElementById("SelectorBox");
-	const itemDetailsCart = document.getElementById("itemDetailsCart");
-
-
-	console.log("display : " , selectorBox.style.display)
-
-	if(selectorBox.style.display != "none"){
-		selectorBox.style.display = "none";
-		itemDetailsCart.style.display = "block";
-	}
-	else{
-		selectorBox.style.display       = "block";
-		itemDetailsCart.style.display   = "none";
-	}
-}
 
 
 /*********************  get data functions ******************************/

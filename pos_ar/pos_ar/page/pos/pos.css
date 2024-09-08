@@ -69,6 +69,15 @@ input:focus{
 
 }
 
+.xBtn{
+	width  : 26px ;
+	height : 26px ;
+}
+.xBtn:hover{
+	width  : 30px ;
+	height : 30px ;
+}
+
 
 /***********************************************************/
 
@@ -113,6 +122,7 @@ input:focus{
 	width     : 100% ;
 	height    : 100% ;
 	animation : mymove 1s  ;
+	display   : block ;
 
 	border        : 2px solid #c0c0c0 ;
 	border-radius : 16px;
@@ -181,6 +191,10 @@ input:focus{
 
 	border        : 2px solid #c0c0c0 ;
 	border-radius : 16px;
+}
+
+#LeftSection #itemDetailsCart #itemDetailsCartHeader{
+	padding : 4px 16px 4px 16px ;
 }
 
 
