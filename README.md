@@ -12,13 +12,12 @@ The custom POS page comes pre-installed when you install the app, requiring no m
 ### Chiffrage Doctype overview :
 | Tab | photo |
 |-----|-------|
-|Details                | ![screen1](https://github.com/user-attachments/assets/5ee1c6a7-bf03-4b58-8d12-2861b4eb48bf)|
-|Feasibility Study      | ![screen2](https://github.com/user-attachments/assets/df12c7c1-3610-4674-a531-8b192a18e134)|
-|Bill of Services       | ![screen3](https://github.com/user-attachments/assets/f80c1470-1537-4b3d-834d-5a40ea708b2e)|
-|Bill of Material       | ![screen4](https://github.com/user-attachments/assets/26771f94-9c73-41b5-95cd-b2b2426bebde)|
-|Bill of Resources      | ![screen5](https://github.com/user-attachments/assets/201f76bf-f243-4dd8-8ff5-b379e62fc1e5)|
-|Other Additional Bills | ![screen6](https://github.com/user-attachments/assets/60e67352-b986-4a5c-8285-269ed5b3a745)|
-|Dashboard (we still working on it)  | ![screen8](https://github.com/user-attachments/assets/525ae963-77ec-4e90-97a2-a80b399f576b)| 
+|POS Screen             | ![screen1](https://github.com/user-attachments/assets/dd15895b-ff91-464d-9046-b30c75256b6b)|
+|Select ItemGroup       | ![screen2](https://github.com/user-attachments/assets/539843ac-1886-4129-b245-a8d3cea87bb2)|
+|Get All Item (Filtred) | ![screen3](https://github.com/user-attachments/assets/d0d72e4f-b6c2-4ed2-8b6d-1614ab9d8a68)|
+|Selecting customer     | ![screen4](https://github.com/user-attachments/assets/43698fd7-1f24-44d8-a3d2-77e148b2a9e9)|
+|Click on Item to sell  | ![screen5](https://github.com/user-attachments/assets/c964b503-b4be-4786-9829-fc1b7aa27db0)|
+|Item Details Cart      | ![screen6](https://github.com/user-attachments/assets/34fa5a41-9cb5-41c6-9ecd-92925f5672ea)|
 
 
 
