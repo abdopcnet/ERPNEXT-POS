@@ -33,11 +33,17 @@ The custom POS page comes pre-installed when you install the app, requiring no m
 To install the **Halfware App** on your Frappe or ERPNext instance: 
 1. **Clone the repository** : 
 ```bash
-$ bench get-app https://github.com/RAYANaouf/
-$ bench --site your-site install-app client1_app
+$ bench get-app https://github.com/RAYANaouf/ERPNEXT-POS
 ```
 2. **Install the app**:
+
 Go to the directory where your ERPNext instance is set up:
 ```bash
 cd /path/to/frappe-bench
+```
+Then install the app into your ERPNext site:
+
+```bash
+bench get-app  
+bench --site [your-site-name] install-app ERPNEXT-POS
 ```
