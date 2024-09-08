@@ -193,8 +193,8 @@ function setSelectedItem(){
 		//item
 		itemElement.classList.add("rowBox" , "align_center" , "row_sbtw" , "ItemElement");
 		itemElement.addEventListener("click" , function(event){
+			renderItemDetailsCart(item);
 			hideSelectorCart();
-			showItemDetails();
 		})
 
 		selectedItemsContainer.appendChild(itemElement);
@@ -204,30 +204,19 @@ function setSelectedItem(){
 }
 
 
+function renderItemDetailsCart(item){
+	showItemDetails()
 
-/*function showOrHideItemDetails(){
+	const itemDetailsHeader = document.getElementById("itemDetailsHeader");
+	itemDetailsHeader.innerHTML = "";
+	const image = document.createElement("img");
 
-	const selectorBox     = document.getElementById("SelectorBox");
-	const itemDetailsCart = document.getElementById("itemDetailsCart");
+	image.src = item.image
 
-	console.log("bfr selectorBox : " , selectorBox.style.display)
-	console.log("bfr itemDetails : " , itemDetailsCart.style.display)
-
-
-	if(selectorBox.style.display != "none"){
-		console.log("in if  : " )
-		hideSelectorCart();
-		showItemDetails();
-	}
-	else{
-		console.log("in if  : " )
-		showSelectorCart();
-		hideItemDetails();
-	}
+	itemDetailsHeader.appendChild(image);
 
 
 }
-*/
 
 /********************* show and hide  functions   *****************************/
 //item detailscart
