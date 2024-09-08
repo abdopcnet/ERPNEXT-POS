@@ -97,6 +97,8 @@ function setItemInFlow(filtered_item_list){
 		itemBox.addEventListener('click' , function(event){
 			itemClick(item);
 			setSelectedItem();
+			calculateNetTotal();
+			calculateQnatity();
 		});
 
 
@@ -239,8 +241,28 @@ function itemClick(item){
 		selectedItemMap.set( item.name  , existingItem);
 	}
 
+
 }
 
+function calculateNetTotal(){
+	let netTotal = 0;
+	selectedItemMap.forEach((value,key) =>{
+		netTotal += value.quantity * getItemPrice(value.name)
+	})
+
+	const netTotal_HTML = document.getElementById("netTotalValue");
+	netTotal_HTML.textContent = netTotal;
+}
+
+function calculateQnatity(){
+	let quantity = 0;
+	selectedItemMap.forEach((value,key) =>{
+		quantity += value.quantity
+	})
+
+	const totalQuantity_HTML = document.getElementById("totalQuantityValue");
+	totalQuantity_HTML.textContent = quantity;
+}
 
 
 /*********************  get data functions ******************************/

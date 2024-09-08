@@ -27,7 +27,10 @@
             </datalist>
         </div>
         <div id="CartBox" class="columnBox">
-            <h3 class="CartTitle">Item Cart</h3>
+            <div>
+                <h3 class="CartTitle">Item Cart</h3>
+                <div></div>
+            </div>
             <div id="cartHeader" class="rowBox row_sbtw">
                 <div><h5>Item</h5></div>
                 <div class="rowBox">
@@ -38,10 +41,22 @@
             <div id="selectedItemsContainer" class="columnBox"></div>
             <div id="cartFooter" class="columnBox">
 		<div id="cartDetails">
-                        <div id="discount">discount</div>
-			<div id="Total Quantity">total quantity</div>
-        	        <div id="Net Total">net total</div>
-			<div id="Grand Total">grand total</div>
+                        <div id="discount" class="rowBox row_align_center row_sbtw">
+                            <div id="addDiscountTitle">Add Discount</div>
+                            <div id="addDiscountValue"></div>
+                        </div>
+			<div id="totalQuantity" class="rowBox row_align_center row_sbtw">
+                            <div id="totalQuantityTitle">Total Quantity</div>
+                            <div id="totalQuantityValue">0</div>
+                        </div>
+        	        <div id="netTotal" class="rowBox row_align_center row_sbtw">
+                            <div id="netTotalTitle">Net Total</div>
+                            <div id="netTotalValue">0.00</div>
+                        </div>
+			<div id="grandTotal" class="rowBox row_align_center row_sbtw">
+                            <div id="grandTotalTitle">Grand Total</div>
+                            <div id="grandTotalValue"></div>
+                        </div>
                 </div>
                 <button type="button" id="checkoutBtn"> Checkout </button>
             </div>

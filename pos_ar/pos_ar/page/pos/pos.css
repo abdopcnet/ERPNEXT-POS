@@ -224,7 +224,7 @@ input:focus{
 #RightSection #CartBox .ItemElement{
 	width   : calc(100% - 32px)  ;
 	height  : 60px     ;
-	min-height : 50px  ;
+	min-height : 60px  ;
 	margin  : 4px 16px ;
 	padding : 5px      ;
 
@@ -256,8 +256,6 @@ input:focus{
 
 /*** footer ***/
 #RightSection #CartBox #cartFooter{
-	height : 150px ;
-	min-height : 150px ;
 	width  : 100%  ;
 }
 
@@ -266,6 +264,35 @@ input:focus{
 #RightSection #CartBox #cartDetails{
 	width  : calc(100% - 32px) ;
 	margin : 8px 16px ;
+}
+
+#RightSection #CartBox #cartDetails #discount{
+	height : 30px  ;
+	border : 1px dashed #c0c0c0 ;
+	border-radius : 12px  ;
+	margin : 4px 0px ;
+	padding : 0px 16px ;
+}
+#RightSection #CartBox #cartDetails #discount:hover{
+	background : #F0F0F0 ; 
+}
+#RightSection #CartBox #cartDetails #totalQuantity{
+	height : 30px  ;
+	margin : 4px 0px ;
+	padding : 0px 16px ;
+}
+#RightSection #CartBox #cartDetails #netTotal{
+	height : 30px  ;
+	margin : 4px 0px ;
+	padding : 0px 16px ;
+}
+#RightSection #CartBox #cartDetails #grandTotal{
+	height : 30px  ;
+	margin : 4px 0px ;
+	padding : 0px 16px ;
+
+	font-weight : 700 ;
+	font-size : large ;
 }
 
 #checkoutBtn{
